@@ -1,4 +1,4 @@
-from queue import Queue
+from queue import Queue, LifoQueue
 
 
 class BinaryTree:
@@ -10,13 +10,6 @@ class BinaryTree:
             self.root = BinaryNode(data)
         else:
             self.insert(self.root, data)
-
-    def traverse(self, node):
-        if node == None:
-            return
-        print(node.data)
-        self.traverse(node.left)
-        self.traverse(node.right)
 
     def insert(self, node, data):
         queue = Queue()
