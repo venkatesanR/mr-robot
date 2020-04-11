@@ -3,11 +3,11 @@
 # go over Mr.Robot garage
 # No fancy stuff.
 # -----------------------
-hackers = ['Mr.Robot', 'Mohd Elias', 'Elliot', 'Darlene']
+hackers = ['Mr.Robot', 'Moh"d Elias', 'Elliot', 'Darlene']
 
 
 def welcome_fellas():
-    print(hackers)
+    print('------------ Welcome fellas', hackers, '-----------')
 
 
 def add_me_in():
@@ -16,5 +16,4 @@ def add_me_in():
 
 if __name__ == '__main__':
     add_me_in()
-    print('------------ Welcome fellas-----------')
     welcome_fellas()
