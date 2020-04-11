@@ -7,6 +7,18 @@ class BinaryTraversal:
     def __init__(self):
         pass
 
+    def deepest_by_level(self, node):
+        queue: Queue[BinaryNode] = Queue()
+        queue._put(node)
+        current_node = None
+        while not queue.empty():
+            current_node = queue.get_nowait()
+            if current_node.left:
+                queue._put(current_node.left)
+            if current_node.right:
+                queue._put(current_node.right)
+        print(current_node.data)
+
     def height(self, node):
         if not node:
             return 0

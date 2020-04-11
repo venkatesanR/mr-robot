@@ -15,3 +15,4 @@ if __name__ == '__main__':
     traversal = BinaryTraversal()
     traversal.level_order(tree.root, reverse=True)
     print('Height Of the Tree: ', traversal.height(tree.root))
+    traversal.deepest_by_level(tree.root)
