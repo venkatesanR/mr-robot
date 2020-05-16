@@ -17,7 +17,7 @@ class BinaryTraversal:
                 queue._put(current_node.left)
             if current_node.right:
                 queue._put(current_node.right)
-        print(current_node.data)
+        return current_node.data
 
     def height(self, node):
         if not node:
@@ -48,7 +48,7 @@ class BinaryTraversal:
             if reverse is True:
                 stack._put(current_node.data)
             else:
-                print(current_node.data)
+                print(current_node.data, end=" ")
 
             if current_node.left:
                 queue._put(current_node.left)
@@ -56,4 +56,24 @@ class BinaryTraversal:
                 queue._put(current_node.right)
         if reverse is True:
             while not stack.empty():
-                print(stack.get_nowait())
+                print(stack.get_nowait(), end=" ")
+
+    def is_identical(self, this_tree, that_tree):
+        if that_tree is None and that_tree is None:
+            return True
+        if that_tree is None or this_tree is None:
+            return False
+        return that_tree.data == this_tree.data and self.is_identical(this_tree.left,
+                                                                      that_tree.left) and self.is_identical(
+            this_tree.right, that_tree.right)
+
+    def diameter(self, node):
+        if not node:
+            return 0
+        else:
+            left_length = 0
+            right_length = 0
+            left_length += self.diameter(node.left)
+            right_length += self.diameter(node.right)
+            print(str(left_length), str(right_length))
+            return max(left_length + 1, right_length + 1)

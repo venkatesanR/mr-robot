@@ -14,7 +14,7 @@ class BinaryTree:
     def insert(self, node, data):
         queue = Queue()
         queue._put(node)
-        while queue.empty() != True:
+        while queue.empty() is not True:
             current_node = queue.get_nowait()
             if current_node.left:
                 queue._put(current_node.left)
@@ -27,8 +27,6 @@ class BinaryTree:
             else:
                 current_node.set_right(BinaryNode(data))
                 break
-
-
 class Node:
     def __init__(self, data):
         self.data = data;

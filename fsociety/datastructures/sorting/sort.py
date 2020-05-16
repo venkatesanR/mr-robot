@@ -33,4 +33,3 @@ if __name__ == '__main__':
     data = [5, 4556, 3, -1, -9]
     selection_sort(data)
     print(data)
-    float()
